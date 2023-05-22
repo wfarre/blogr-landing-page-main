@@ -1,36 +1,172 @@
 body {
   margin: 0;
   font-family: "Ubuntu", sans-serif;
+  color: hsl(207, 13%, 34%);
+}
+
+.navbar {
+  display: flex;
+  padding: 50px 100px;
+  gap: 4rem;
+  align-items: center;
+}
+.navbar__logo {
+  position: relative;
+  height: 2rem;
+  width: 106px;
+}
+.navbar__logo img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.navbar__nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  gap: 2rem;
+}
+.navbar__nav__group__title {
+  background-color: transparent;
+  border: none;
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+.navbar__nav__group__list {
+  display: none;
+}
+.navbar .nav {
+  display: flex;
+  gap: 18px;
+  list-style-type: none;
+  align-items: center;
+}
+.navbar .btn {
+  text-decoration: none;
+  border: none;
 }
 
 .header {
-  background-image: url("../images/bg-pattern-intro-desktop.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  z-index: 0;
+  position: relative;
+  width: 100%;
   background: linear-gradient(to right, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
   color: hsl(0, 0%, 100%);
   text-align: center;
-  padding: 100px 0;
+  padding-bottom: 100px;
+  border-radius: 0 0 0 100px;
+  overflow: hidden;
 }
 .header__header {
   font-family: "Overpass", sans-serif;
+  margin-top: 100px;
+  z-index: 999;
 }
-.header .btn {
-  background-color: hsl(356, 100%, 66%);
-  color: hsl(0, 0%, 100%);
-  padding: 15px 20px;
-  border-radius: 30px;
-  border: 1px hsl(0, 0%, 100%) solid;
-}
-.header .btn--white {
-  background-color: hsl(0, 0%, 100%);
-  color: hsl(356, 100%, 66%);
+.header .decoration-bg {
+  position: absolute;
+  height: 130%;
+  width: 130%;
+  object-fit: cover;
+  left: 0;
+  top: 0;
+  z-index: -1;
 }
 
+.section {
+  margin-top: 100px;
+}
 .section__header__title {
   font-size: 2rem;
   text-align: center;
   color: hsl(208, 49%, 24%);
+}
+.section .container {
+  display: flex;
+  overflow-x: hidden;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+}
+.section .container--reverse {
+  flex-direction: row-reverse;
+}
+.section__main {
+  padding: 0 80px;
+}
+.section__main .text-container {
+  margin-bottom: 50px;
+}
+.section__main__image {
+  width: 40%;
+}
+.section__main__text {
+  width: 40%;
+  line-height: 1.75rem;
+}
+.section__main__text__title {
+  color: hsl(208, 49%, 24%);
+}
+.section--dark {
+  background-image: url("../images//bg-pattern-circles.svg");
+  background-size: contain;
+}
+
+.btn {
+  display: inline-block;
+  background-color: hsl(356, 100%, 66%);
+  color: hsl(0, 0%, 100%);
+  padding: 13px 0;
+  width: 140px;
+  border-radius: 30px;
+  border: 1px hsl(0, 0%, 100%) solid;
+  text-align: center;
+}
+.btn:hover {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(356, 100%, 66%);
+}
+.btn--white {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(356, 100%, 66%);
+}
+.btn--white:hover {
+  background-color: hsl(355, 100%, 74%);
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+.btn--transparent {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.btn--transparent:hover {
+  background-color: transparent;
+  color: hsl(0, 0%, 100%);
+}
+
+.open {
+  position: relative;
+}
+.open .navbar__nav__group__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0;
+  padding: 1rem 2rem 1rem 1rem;
+  position: absolute;
+  background-color: hsl(0, 0%, 100%);
+  list-style-type: none;
+  z-index: 999;
+  border-radius: 5px;
+}
+.open .navbar__nav__group__list__item a {
+  color: hsl(207, 13%, 34%);
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=styles.css.map */
