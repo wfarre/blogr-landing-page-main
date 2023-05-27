@@ -36,11 +36,21 @@
   
 
   <header class="header">
-    <img class="decoration-bg" src="./images/bg-pattern-intro-desktop.svg" alt="">
+    <!-- <img class="decoration-bg decoration-bg--desktop" src="./images/bg-pattern-intro-desktop.svg" alt="">
+    <img class="decoration-bg decoration-bg--mobile" src="./images/bg-pattern-intro-mobile.svg" alt=""> -->
+    <picture class="decoration-bg">
+      <img src="./images/bg-pattern-intro-mobile.svg" alt="" >
+      <source media="(max-width:375px)" srcset="./images/bg-pattern-intro-desktop.svg">
+    </picture>
+
     <nav class="navbar">
       <div class="navbar__logo">
         <img src="./images/logo.svg" alt="Blogr logo">
       </div>
+      <!-- <div class="menu-btn"></div> -->
+      <button class="btn--menu">
+        <img src="./images/icon-hamburger.svg" alt="open menu">
+      </button>
       <div class="navbar__nav">
         <div class="nav nav--left">
           <div class="navbar__nav__group">
@@ -94,14 +104,19 @@
   </header>
 
   <main class="main">
-    <section class="section">
+    <section class="section section--right">
       <header class="section__header">
         <h2 class="section__header__title">Designed for the future</h2>
       </header>
       <div class="section__main">
         <div class="container container--reverse">
           <div class="section__main__image">
-            <img src="./images/illustration-editor-desktop.svg" alt="">
+
+            <picture>
+              <source media="(max-width:375px)" srcset="./images/illustration-editor-mobile.svg">
+              <img src="./images/illustration-editor-desktop.svg" alt="">
+
+            </picture>
           </div>
           <div class="section__main__text">
             <div class="text-container">
@@ -136,6 +151,11 @@
     </section>
 
     <section class="section section--dark">
+      <div class="background">
+        <!-- <div class="background__image">
+          <img src="./images/bg-pattern-circles.svg" alt="">
+        </div> -->
+      </div>
       <header class="section__header"></header>
       <div class="section__main">
         <div class="container">
@@ -159,7 +179,7 @@
       <footer class="section__footer"></footer>
     </section>
 
-    <section class="section">
+    <section class="section section--left">
       <header class="section__header"></header>
       <div class="section__main">
         <div class="container ">
@@ -207,11 +227,14 @@
 
 
   <footer class="footer">
-    <div class="footer__logo">Blogr</div>
+    
 
     <nav class="footer__nav">
+      <div class="footer__logo">
+        <img src="./images/logo.svg" alt="">
+      </div>
       <div class="footer__nav__group">
-        <h3 class="footer__nav__group__title"></h3>
+        <h3 class="footer__nav__group__title">Product</h3>
         <ul class="footer__nav__group__list">
           <li class="navbar__nav__group__list__item"><a href="">Overview</a></li>
           <li class="navbar__nav__group__list__item"><a href="">Pricing</a></li>
@@ -221,7 +244,7 @@
         </ul>
       </div>
       <div class="footer__nav__group">
-        <h3 class="footer__nav__group__title"></h3>
+        <h3 class="footer__nav__group__title">Company</h3>
         <ul class="footer__nav__group__list">
           <li class="navbar__nav__group__list__item"><a href="">About</a></li>
           <li class="navbar__nav__group__list__item"><a href="">Team</a></li>
@@ -230,7 +253,7 @@
         </ul>
       </div>
       <div class="footer__nav__group">
-        <h3 class="footer__nav__group__title"></h3>
+        <h3 class="footer__nav__group__title">Connect</h3>
         <ul class="footer__nav__group__list">
           <li class="navbar__nav__group__list__item"><a href="">Contact</a></li>
           <li class="navbar__nav__group__list__item"><a href="">Newsletter</a></li>

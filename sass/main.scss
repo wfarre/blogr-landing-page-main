@@ -9,22 +9,43 @@ $headings--primary:hsl(208, 49%, 24%);
 $footer-bg:hsl(240, 10%, 16%);
 $text--footer:hsl(240, 2%, 79%);
 
-$padding-left-right: 100px;
+$padding-left-right: calc((166/1440) * 100vw);
+$padding-left-right--mobile: calc((24/375) * 100vw);
+
+@mixin mobile-only{
+    @media all and (max-width:375px) {
+        @content;
+    }
+}
+
+@mixin responsive-width--mobile($value){
+    width: calc(($value / 375) * 100vw);
+}
+@mixin responsive-height--mobile($value){
+    height: calc(($value / 375) * 100vw);
+}
+@mixin responsive-size--mobile($value){
+    font-size: calc(($value / 375) * 100vw);
+}
 
 body{
     margin: 0;
-    // font-family: 'Overpass', sans-serif;
 font-family: 'Ubuntu', sans-serif;
 color: $text--primary;
+
+
 }
 
 .navbar{
     display: flex;
-    // background:linear-gradient(to right, hsl(13, 100%, 72%),hsl(353, 100%, 62%));
     padding: 50px $padding-left-right;
     gap: 4rem;
     align-items: center;
     // z-index: 0;
+    @include mobile-only(){
+        justify-content: space-between;
+        padding: 56px $padding-left-right--mobile;
+    }
 
     &__logo{
         position: relative;
@@ -47,7 +68,9 @@ color: $text--primary;
         width: 100%;
         align-items: center;
         gap: 2rem;
-        // margin-left: auto;
+        @include mobile-only(){
+            display: none;
+        }
       &__group{
         &__title{
             background-color: transparent;
@@ -68,9 +91,7 @@ color: $text--primary;
         gap: 18px;
         list-style-type:none;
         align-items: center;
-        // &--right{
-            
-        // }
+     
     }
 
     .btn{
@@ -85,27 +106,44 @@ color: $text--primary;
     z-index: 0;
     position: relative;
     width: 100%;
-    // background: url("../images/bg-pattern-intro-desktop.svg");
-
-    // background-repeat:repeat;
-    // background-size: contain;
-    // height: 1000px;
-    // background-size: cover;
-    // background-repeat: no-repeat;
-    // background-position: center center;
+   
     background:linear-gradient(to right, hsl(13, 100%, 72%),hsl(353, 100%, 62%));
-    // background-image: url("../images/bg-pattern-intro-desktop.svg");
-    // background-color: blue;
+  
 
     color: $white;
     text-align: center;
-    padding-bottom: 100px;
+    padding-bottom: 150px;
    
     border-radius: 0 0 0 100px;
+  
+
+
+    @include mobile-only(){
+        width: auto;
+    
+    }
+
+
     &__header{
         font-family: 'Overpass', sans-serif;
         margin-top: 100px ;
-        z-index: 999
+        z-index: 999;
+
+        &__title{
+            font-size: calc((50 / 1440) * 100vw);
+            margin:0;
+            margin-bottom: 2.5rem;
+
+            @include mobile-only(){
+                @include responsive-size--mobile(30);
+                padding: 0 calc((44/375) * 100vw)
+            }
+        }
+
+        &__text{
+            margin:0;
+            margin-bottom: 2.5rem;
+        }
     }
 
     // .btn{
@@ -134,65 +172,222 @@ color: $text--primary;
     //     left:0;
     //     z-index:100;
     // }
+
+    &__footer{
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
     .decoration-bg{
-        position: absolute;
-        height: 130%;
-        width: 130%;
-        object-fit: cover;
-        left: 0;
-        top: 0;
-        z-index: -1;
+        img, source{
+            position: absolute;
+            height: 130%;
+            width: 130%;
+            object-fit: cover;
+            left: 0;
+            top: 0;
+            z-index: -1;
+        }
+        
     }
     overflow: hidden;
 }
 
 
 .section{
-    margin-top: 100px;
+    padding: 0 $padding-left-right;
+    @include mobile-only(){
+        text-align: center;
+        padding: 0 $padding-left-right--mobile;
+        padding-top: 150px;
+    }
     &__header{
         &__title{
             font-size: 2rem;
             text-align: center;
             color: $headings--primary;
+            @include mobile-only(){
+                font-size: 1.5rem;
+                font-weight: 400;
+            }
+        }
+    }
+
+    
+
+    &__main{
+        @include mobile-only(){
+            width: auto;
+           
+        }
+        .text-container{
+            margin-bottom: 5rem;
+        }
+        &__image{
+            position: relative;
+            width: calc((620/1440) * 100vw );
+            @include mobile-only(){
+                width: 100%;
+            }
+            picture{
+                image, source{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    object-position: center center;
+                    object-fit: cover;
+                    
+                }
+            }
+        }
+        &__text{
+            width: calc((540/1440) * 100vw);
+            line-height: 1.75rem;
+            @include  mobile-only(){
+                font-size: 13px;
+                width: 100%;
+            }
+            &__title{
+                color:$headings--primary;
+                font-size: 1.5rem;
+                font-weight: 400;
+                margin:0;
+                margin-bottom: 2rem;
+
+            }
+            &__content{
+                margin: 0;
+            }
         }
     }
 
     .container{
         display: flex;
-    overflow-x:hidden;
+        overflow-x:hidden;
         justify-content: space-around;
         flex-direction: row;
         align-items: center;
-        // padding: 0 100px
+        gap: calc((120/1440) * 100vw);
+
+       
         &--reverse{
             flex-direction: row-reverse;
-            // padding-right:0 ;
-        }
-    }
-
-    &__main{
-        padding: 0 80px;
-        .text-container{
-            margin-bottom: 50px;
-        }
-        &__image{
-            width: 40%;
-        }
-        &__text{
-            width: 40%;
-            line-height: 1.75rem;
-            &__title{
-                color:$headings--primary
+            gap: 0;
+            @include mobile-only(){
+                flex-direction: column;
             }
         }
     }
 
-    &--dark{
-        // background-color: $headings--primary;
-        background-image: url("../images//bg-pattern-circles.svg");
-        background-size: contain;
+    &--right{
+        .section__main{
+            position: relative;
+            top:-124px;
+            @include mobile-only(){
+                top: 0;
+            }
+        }
     }
 
+    
+
+    &--dark{
+        position: relative;
+        padding: 0;
+        color: $white;
+
+        .container{
+            // gap:calc((96/1440)*100vw);
+            justify-content: space-between;
+            gap: 0;
+        }
+
+        .section__main{
+            // width: calc(523);
+            &__text{
+                width: calc((521 / 1440) * 100vw);
+
+                &__title{
+                    font-size: 2rem;
+                    color: $white;
+                }
+            }
+        }
+
+
+        .background{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            background: linear-gradient(to right, hsl(237, 17%, 21%),hsl(237, 23%, 32%));
+            height: calc((400/579) * 100%);
+            width: 100%;
+            z-index: -1;
+            border-radius: 0 100px 0 100px;
+          
+            &::before{
+                content: "";
+                position: absolute;
+                background-image: url("../images//bg-pattern-circles.svg");
+                background-repeat: no-repeat;
+                background-position: left -220px bottom -100px;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+    
+            }
+        }
+        
+
+
+    }
+
+    &--left{
+        .section__main{
+            padding-left: 0;
+
+            .container{
+             
+                justify-content: space-between;
+                overflow: visible;
+                gap: 0;
+
+            }
+
+            &__image{
+                position: relative;
+               
+                aspect-ratio: 974 / 786;
+                width: calc((631/1440) * 100vw);
+
+                img{
+                    position: absolute;
+                    aspect-ratio: 974 / 786;
+                    width: calc((974/1440) * 100vw);
+                    left:calc(((631 - 974)/1440) * 100vw);
+                    // left: 0;
+                    top: calc((-185 / 1440) * 100vw);
+                    // top: calc((-85/1440) * 100vw);
+                    // height: 100%;
+                    // width: 100%;
+                //       width: 974px;
+                // height: 786px;
+                //  width: calc((974/1440) * 100vw);
+                // height: calc(((786/1440) * 100vw));
+
+                }
+            }
+            &__text{
+                width: calc((521 / 1440) * 100vw);
+            }
+        }
+    }
+
+    
 
 }
 
@@ -256,5 +451,58 @@ color: $text--primary;
         }
 
 
+    }
+}
+
+.footer{
+    background-color: $footer-bg;
+    color: $text--footer;
+    padding: 60px $padding-left-right;
+    border-radius: 0 100px 0 0 ;
+    
+
+    &__nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        @include mobile-only(){
+            flex-direction: column;
+            align-items: center;
+        }
+        &__group{
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            &__list{
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                list-style-type: none;
+                li{
+                    a{
+                        color: $text--footer;
+                        text-decoration: none;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.btn--menu{
+    position: relative;
+    height: 18px;
+    width: 32px;
+    background-color: transparent;
+    border: none;
+    img{
+position: absolute;
+height: 100%;
+width: 100%;
+left: 0;
+top: 0;
     }
 }

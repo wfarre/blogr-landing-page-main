@@ -6,9 +6,15 @@ body {
 
 .navbar {
   display: flex;
-  padding: 50px 100px;
+  padding: 50px 11.5277777778vw;
   gap: 4rem;
   align-items: center;
+}
+@media all and (max-width: 375px) {
+  .navbar {
+    justify-content: space-between;
+    padding: 56px 6.4vw;
+  }
 }
 .navbar__logo {
   position: relative;
@@ -28,6 +34,11 @@ body {
   width: 100%;
   align-items: center;
   gap: 2rem;
+}
+@media all and (max-width: 375px) {
+  .navbar__nav {
+    display: none;
+  }
 }
 .navbar__nav__group__title {
   background-color: transparent;
@@ -58,16 +69,41 @@ body {
   background: linear-gradient(to right, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
   color: hsl(0, 0%, 100%);
   text-align: center;
-  padding-bottom: 100px;
+  padding-bottom: 150px;
   border-radius: 0 0 0 100px;
   overflow: hidden;
+}
+@media all and (max-width: 375px) {
+  .header {
+    width: auto;
+  }
 }
 .header__header {
   font-family: "Overpass", sans-serif;
   margin-top: 100px;
   z-index: 999;
 }
-.header .decoration-bg {
+.header__header__title {
+  font-size: 3.4722222222vw;
+  margin: 0;
+  margin-bottom: 2.5rem;
+}
+@media all and (max-width: 375px) {
+  .header__header__title {
+    font-size: 8vw;
+    padding: 0 11.7333333333vw;
+  }
+}
+.header__header__text {
+  margin: 0;
+  margin-bottom: 2.5rem;
+}
+.header__footer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.header .decoration-bg img, .header .decoration-bg source {
   position: absolute;
   height: 130%;
   width: 130%;
@@ -78,12 +114,71 @@ body {
 }
 
 .section {
-  margin-top: 100px;
+  padding: 0 11.5277777778vw;
+}
+@media all and (max-width: 375px) {
+  .section {
+    text-align: center;
+    padding: 0 6.4vw;
+    padding-top: 150px;
+  }
 }
 .section__header__title {
   font-size: 2rem;
   text-align: center;
   color: hsl(208, 49%, 24%);
+}
+@media all and (max-width: 375px) {
+  .section__header__title {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+}
+@media all and (max-width: 375px) {
+  .section__main {
+    width: auto;
+  }
+}
+.section__main .text-container {
+  margin-bottom: 5rem;
+}
+.section__main__image {
+  position: relative;
+  width: 43.0555555556vw;
+}
+@media all and (max-width: 375px) {
+  .section__main__image {
+    width: 100%;
+  }
+}
+.section__main__image picture image, .section__main__image picture source {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-position: center center;
+  object-fit: cover;
+}
+.section__main__text {
+  width: 37.5vw;
+  line-height: 1.75rem;
+}
+@media all and (max-width: 375px) {
+  .section__main__text {
+    font-size: 13px;
+    width: 100%;
+  }
+}
+.section__main__text__title {
+  color: hsl(208, 49%, 24%);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 2rem;
+}
+.section__main__text__content {
+  margin: 0;
 }
 .section .container {
   display: flex;
@@ -91,29 +186,86 @@ body {
   justify-content: space-around;
   flex-direction: row;
   align-items: center;
+  gap: 8.3333333333vw;
 }
 .section .container--reverse {
   flex-direction: row-reverse;
+  gap: 0;
 }
-.section__main {
-  padding: 0 80px;
+@media all and (max-width: 375px) {
+  .section .container--reverse {
+    flex-direction: column;
+  }
 }
-.section__main .text-container {
-  margin-bottom: 50px;
+.section--right .section__main {
+  position: relative;
+  top: -124px;
 }
-.section__main__image {
-  width: 40%;
-}
-.section__main__text {
-  width: 40%;
-  line-height: 1.75rem;
-}
-.section__main__text__title {
-  color: hsl(208, 49%, 24%);
+@media all and (max-width: 375px) {
+  .section--right .section__main {
+    top: 0;
+  }
 }
 .section--dark {
+  position: relative;
+  padding: 0;
+  color: hsl(0, 0%, 100%);
+}
+.section--dark .container {
+  justify-content: space-between;
+  gap: 0;
+}
+.section--dark .section__main__text {
+  width: 36.1805555556vw;
+}
+.section--dark .section__main__text__title {
+  font-size: 2rem;
+  color: hsl(0, 0%, 100%);
+}
+.section--dark .background {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background: linear-gradient(to right, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+  height: 69.0846286701%;
+  width: 100%;
+  z-index: -1;
+  border-radius: 0 100px 0 100px;
+}
+.section--dark .background::before {
+  content: "";
+  position: absolute;
   background-image: url("../images//bg-pattern-circles.svg");
-  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left -220px bottom -100px;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.section--left .section__main {
+  padding-left: 0;
+}
+.section--left .section__main .container {
+  justify-content: space-between;
+  overflow: visible;
+  gap: 0;
+}
+.section--left .section__main__image {
+  position: relative;
+  aspect-ratio: 974/786;
+  width: 43.8194444444vw;
+}
+.section--left .section__main__image img {
+  position: absolute;
+  aspect-ratio: 974/786;
+  width: 67.6388888889vw;
+  left: -23.8194444444vw;
+  top: -12.8472222222vw;
+}
+.section--left .section__main__text {
+  width: 36.1805555556vw;
 }
 
 .btn {
@@ -167,6 +319,55 @@ body {
 .open .navbar__nav__group__list__item a {
   color: hsl(207, 13%, 34%);
   text-decoration: none;
+}
+
+.footer {
+  background-color: hsl(240, 10%, 16%);
+  color: hsl(240, 2%, 79%);
+  padding: 60px 11.5277777778vw;
+  border-radius: 0 100px 0 0;
+}
+.footer__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+@media all and (max-width: 375px) {
+  .footer__nav {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.footer__nav__group {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.footer__nav__group__list {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style-type: none;
+}
+.footer__nav__group__list li a {
+  color: hsl(240, 2%, 79%);
+  text-decoration: none;
+}
+
+.btn--menu {
+  position: relative;
+  height: 18px;
+  width: 32px;
+  background-color: transparent;
+  border: none;
+}
+.btn--menu img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */
