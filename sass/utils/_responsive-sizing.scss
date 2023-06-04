@@ -1,0 +1,9 @@
+@mixin responsive-width--mobile($value){
+    width: calc(($value / 375) * 100vw);
+}
+@mixin responsive-height--mobile($value){
+    height: calc(($value / 375) * 100vw);
+}
+@mixin responsive-size--mobile($value){
+    font-size: calc(($value / 375) * 100vw);
+}

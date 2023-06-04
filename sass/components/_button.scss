@@ -1,0 +1,67 @@
+.btn {
+  display: inline-block;
+  background-color: $btn--primary;
+  color: $white;
+  padding: 13px 0;
+  width: 140px;
+  border-radius: 30px;
+  border: 1px $white solid;
+  text-align: center;
+  &:hover {
+    background-color: $white;
+    color: $btn--primary;
+  }
+  &--white {
+    background-color: $white;
+    color: $btn--primary;
+    &:hover {
+      background-color: $btn--secondary;
+      color: $white;
+      cursor: pointer;
+    }
+  }
+
+  &--mobile-vary {
+    @include mobile-only {
+      background: linear-gradient(
+        to right,
+        hsl(13, 100%, 72%),
+        hsl(353, 100%, 62%)
+      );
+      color: $white;
+    }
+  }
+
+  &--transparent {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    @include mobile-only {
+      color: $headings--primary;
+    }
+    &:hover {
+      background-color: transparent;
+      color: $white;
+    }
+  }
+}
+
+.btn--menu {
+  position: relative;
+  height: 18px;
+  width: 32px;
+  background-color: transparent;
+  border: none;
+  display: none;
+  img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  @include mobile-only {
+    display: block;
+  }
+}

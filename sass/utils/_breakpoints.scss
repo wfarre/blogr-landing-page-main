@@ -1,0 +1,11 @@
+@mixin mobile-only {
+  @media all and (max-width: 929px) {
+    @content;
+  }
+}
+
+@mixin small-desktop {
+  @media all and (max-width: 1300px) {
+    @content;
+  }
+}

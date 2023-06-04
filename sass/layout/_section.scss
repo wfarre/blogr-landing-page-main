@@ -1,0 +1,294 @@
+.section {
+  padding: 0 $padding-left-right;
+  margin-top: 150px;
+  @include small-desktop {
+    padding: 0 $padding-left-right--small-desktop;
+  }
+  @include mobile-only() {
+    margin-top: 100px;
+  }
+
+  &__header {
+    &__title {
+      font-size: 2rem;
+      text-align: center;
+      color: $headings--primary;
+      @include mobile-only() {
+        font-size: 1.5rem;
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__main {
+    @include mobile-only() {
+      width: auto;
+    }
+    .text-container {
+      margin-bottom: 5rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &__image {
+      position: relative;
+      width: calc((620 / 1440) * 100vw);
+      @include mobile-only() {
+        width: 100%;
+      }
+      picture {
+        image,
+        source {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          object-position: center center;
+          object-fit: cover;
+        }
+      }
+    }
+    &__text {
+      width: calc((540 / 1440) * 100vw);
+      line-height: 1.75rem;
+      @include mobile-only() {
+        font-size: 13px;
+        width: 100%;
+      }
+      &__title {
+        color: $headings--primary;
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin: 0;
+        margin-bottom: 2rem;
+      }
+      &__content {
+        margin: 0;
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    overflow-x: hidden;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    gap: calc((120 / 1440) * 100vw);
+
+    &--reverse {
+      flex-direction: row-reverse;
+      // gap: 0;
+      @include mobile-only() {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &--right {
+    padding-right: 0;
+    position: relative;
+    height: 800px;
+    .section__main {
+      position: absolute;
+      right: 0;
+      top: -124px;
+      @include mobile-only() {
+        position: relative;
+        top: 0;
+      }
+    }
+  }
+
+  &--dark {
+    margin-top: 0;
+    position: relative;
+    padding: 0;
+    height: calc((500 / 1440) * 100vw);
+    padding-right: $padding-left-right;
+    padding-left: $padding-left-right;
+    @include small-desktop {
+      padding: 0 $padding-left-right--small-desktop;
+    }
+    @include mobile-only {
+      //   height: max-content;
+      margin-bottom: 100px;
+    }
+
+    .container {
+      // gap:calc((96/1440)*100vw);
+      justify-content: space-between;
+      // gap: 100px;
+      align-items: center;
+      gap: 0;
+    }
+
+    .section__main {
+      // width: calc(523);
+
+      &__image {
+        // width: 100%;
+        width: calc((552 / 1440) * 100vw);
+        aspect-ratio: 552/579;
+        // picture {
+        img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          object-position: center center;
+          object-fit: cover;
+        }
+      }
+      &__text {
+        width: calc((520 / 1440) * 100vw);
+        // width: 450px;
+        color: $text--footer;
+        @include mobile-only() {
+          width: 100%;
+        }
+
+        &__title {
+          font-size: 2rem;
+          color: $white;
+          line-height: 3rem;
+          // color: $white;
+        }
+      }
+    }
+
+    .background {
+      position: absolute;
+      top: 55%;
+      // top: 0;
+      left: 0;
+      transform: translateY(-50%);
+      background: linear-gradient(
+        to right,
+        hsl(237, 17%, 21%),
+        hsl(237, 23%, 32%)
+      );
+      height: calc((400 / 1440) * 100vw);
+      width: 100%;
+      z-index: -1;
+      border-radius: 0 100px 0 100px;
+      overflow: hidden;
+
+      @include mobile-only() {
+        height: calc((625 / 375) * 100vw);
+        top: 75%;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        background-image: url("../images//bg-pattern-circles.svg");
+        background-repeat: no-repeat;
+        background-position: left -220px bottom -100px;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+
+        @include mobile-only() {
+          background-position: center top -280px;
+          background-size: cover;
+        }
+      }
+    }
+  }
+
+  &--left {
+    margin-top: 250px;
+    .section__main {
+      padding-left: 0;
+      // padding-right: $padding-left-right;
+
+      @include mobile-only {
+        padding-top: 100px;
+      }
+
+      .container {
+        justify-content: space-between;
+        overflow: visible;
+        gap: 0;
+      }
+
+      &__image {
+        position: relative;
+
+        aspect-ratio: 974 / 786;
+        width: calc((631 / 1440) * 100vw);
+        width: calc((620 / 1440) * 100vw);
+        @include mobile-only() {
+          width: 100%;
+        }
+
+        img {
+          position: absolute;
+          aspect-ratio: 974 / 786;
+          width: calc((974 / 1440) * 100vw);
+          left: calc(((631 - 974) / 1440) * 100vw);
+          // left: 0;
+          top: calc((-185 / 1440) * 100vw);
+          @include mobile-only() {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+          }
+          // top: calc((-85/1440) * 100vw);
+          // height: 100%;
+          // width: 100%;
+          //       width: 974px;
+          // height: 786px;
+          //  width: calc((974/1440) * 100vw);
+          // height: calc(((786/1440) * 100vw));
+        }
+      }
+      &__text {
+        width: calc((520 / 1440) * 100vw);
+        // width: 450px;
+        @include mobile-only() {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @include mobile-only() {
+    text-align: center;
+    padding: 0 $padding-left-right--mobile;
+    // margin-top: 150px;
+    .container {
+      flex-direction: column;
+    }
+
+    &__main {
+      width: 100%;
+      &__image {
+        position: relative;
+        width: 100%;
+        // height: calc((330/375) * 100vw);
+        aspect-ratio: 406/ 331;
+        img,
+        source {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          // object-position: center center;
+          // object-fit: cover;
+        }
+      }
+      &__text {
+        width: 100%;
+      }
+    }
+  }
+}
