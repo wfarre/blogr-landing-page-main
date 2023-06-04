@@ -1,12 +1,19 @@
 .navbar {
   position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: calc(100% - 2 * $padding-left-right);
   display: flex;
   padding: $padding-nav-topbottom $padding-left-right;
   gap: 4rem;
   align-items: center;
   @include mobile-only() {
     justify-content: space-between;
+    width: calc(100% - 2 * $padding-left-right--mobile);
     padding: $padding-nav-topbottom $padding-left-right--mobile;
+    text-align: center;
     // width: calc(100% - (2 * $padding-left-right--mobile));
   }
 
@@ -41,24 +48,29 @@
       display: none;
       position: absolute;
       left: 0;
-      top: 100px;
+      top: calc((125 / 375) * 100vw);
       flex-direction: column;
       align-items: center;
       background-color: $white;
       margin: 0 $padding-left-right--mobile;
       padding: 2rem 1.5rem;
       width: calc(100% - (2 * (1.5rem + $padding-left-right--mobile)));
+      gap: 24px;
       &.display {
+        z-index: 999;
+        overflow: visible;
         display: flex;
         position: absolute;
         left: 0;
-        top: 100px;
+        top: calc((125 / 375) * 100vw);
+        top: 125px;
         flex-direction: column;
         align-items: center;
         background-color: $white;
         margin: 0 $padding-left-right--mobile;
         padding: 2rem 1.5rem;
         width: calc(100% - (2 * (1.5rem + $padding-left-right--mobile)));
+        border-radius: 5px;
       }
 
       .nav {
@@ -66,7 +78,7 @@
         width: 100%;
 
         &--left {
-          border-bottom: 2px solid palevioletred;
+          border-bottom: 2px solid rgb(239, 239, 241);
           padding-bottom: 1.5rem;
         }
       }
@@ -111,6 +123,10 @@
     @include mobile-only {
       color: $text--footer;
     }
+    img,
+    source {
+      transform: rotate(180deg);
+    }
   }
   .navbar__nav__group__list {
     display: flex;
@@ -126,7 +142,7 @@
 
     @include mobile-only {
       position: relative;
-      background-color: lightgrey;
+      background-color: rgb(239, 239, 241);
       padding: 1rem 0;
       width: 100%;
     }

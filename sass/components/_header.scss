@@ -1,98 +1,101 @@
-.header{
-    z-index: 0;
-    position: relative;
-    width: 100%;
-    background:linear-gradient(to right, hsl(13, 100%, 72%),hsl(353, 100%, 62%));
-    color: $white;
-    text-align: center;
-    padding-bottom: calc(150px - $padding-nav-topbottom);
-    border-radius: 0 0 0 100px;
-  
+.header {
+  z-index: 0;
+  position: relative;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    hsl(13, 100%, 72%),
+    hsl(353, 100%, 62%)
+  );
+  color: $white;
+  text-align: center;
+  padding-bottom: calc(150px - $padding-nav-topbottom);
+  border-radius: 0 0 0 100px;
+  padding-top: 145px;
 
+  @include mobile-only() {
+    width: auto;
+    padding-top: calc((205 / 375) * 100vw);
+    padding-top: 105px;
+    // padding-bottom: 100px;
+  }
 
-    @include mobile-only(){
-        width: auto;
-        // padding-bottom: 100px;
-    
+  &__header {
+    font-family: "Overpass", sans-serif;
+    font-family: "Ubuntu", sans-serif;
+
+    // font-weight: 400;
+
+    margin-top: 100px;
+    z-index: 999;
+    // padding: 0 px;
+    @include mobile-only() {
+      padding: 0 2.7rem;
     }
 
+    &__title {
+      font-family: "Overpass", sans-serif;
 
-    &__header{
-        font-family: 'Overpass', sans-serif;
-        font-family: 'Ubuntu', sans-serif;
+      font-size: calc((50 / 1440) * 100vw);
+      margin: 0;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
 
-        // font-weight: 400;
-
-        margin-top: 100px ;
-        z-index: 999;
-        // padding: 0 px;
-        @include mobile-only(){
-            padding: 0 2.7rem
-        }
-
-        &__title{
-            font-family: 'Overpass', sans-serif;
-
-            font-size: calc((50 / 1440) * 100vw);
-            margin:0;
-            margin-bottom: 2.5rem;
-            font-weight: 300;
-
-            @include mobile-only(){
-                @include responsive-size--mobile(30);
-                // padding: 0 calc((44/375) * 100vw)
-            }
-        }
-
-        &__text{
-            margin:0;
-            margin-bottom: 2.5rem;
-        }
+      @include mobile-only() {
+        @include responsive-size--mobile(30);
+        // padding: 0 calc((44/375) * 100vw)
+      }
     }
 
-    // .btn{
-    //     background-color: $btn--primary;
-    //     color: $white;
-    //     padding: 15px 20px ;
-    //     border-radius: 30px;
-    //     border: 1px $white solid;
-    //     &--white{
-    //         background-color: $white;
-    //         color: $btn--primary;
-           
-    //     }
-    // }
-
-    // &::before{
-    //     content: "";
-    //     background-image: url("../images/bg-pattern-intro-desktop.svg");
-    //     background-size: cover;
-    //     background-repeat: no-repeat;
-    //     background-position: right center;
-    //     width: 100%;
-    //     height: 100%;
-    //     position: relative;
-    //     top: 0;
-    //     left:0;
-    //     z-index:100;
-    // }
-
-    &__footer{
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
+    &__text {
+      margin: 0;
+      margin-bottom: 2.5rem;
     }
-    .decoration-bg{
-        img, source{
-            position: absolute;
-            height: 130%;
-            width: 130%;
-            object-fit: cover;
-            left: 0;
-            top: 0;
-            z-index: -1;
-        }
-        
+  }
+
+  // .btn{
+  //     background-color: $btn--primary;
+  //     color: $white;
+  //     padding: 15px 20px ;
+  //     border-radius: 30px;
+  //     border: 1px $white solid;
+  //     &--white{
+  //         background-color: $white;
+  //         color: $btn--primary;
+
+  //     }
+  // }
+
+  // &::before{
+  //     content: "";
+  //     background-image: url("../images/bg-pattern-intro-desktop.svg");
+  //     background-size: cover;
+  //     background-repeat: no-repeat;
+  //     background-position: right center;
+  //     width: 100%;
+  //     height: 100%;
+  //     position: relative;
+  //     top: 0;
+  //     left:0;
+  //     z-index:100;
+  // }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .decoration-bg {
+    img,
+    source {
+      position: absolute;
+      height: 130%;
+      width: 130%;
+      object-fit: cover;
+      left: 0;
+      top: 0;
+      z-index: -1;
     }
-    overflow: hidden;
+  }
+  overflow: hidden;
 }

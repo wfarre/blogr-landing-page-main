@@ -42,4 +42,5 @@ navGroups.forEach((btn) => {
 
 menuBtn.addEventListener("click", () => {
   navigation.classList.toggle("display");
+  menuBtn.classList.toggle("display");
 });

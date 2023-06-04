@@ -5,7 +5,7 @@
     padding: 0 $padding-left-right--small-desktop;
   }
   @include mobile-only() {
-    margin-top: 100px;
+    margin-top: 80px;
   }
 
   &__header {
@@ -54,7 +54,7 @@
       width: calc((540 / 1440) * 100vw);
       line-height: 1.75rem;
       @include mobile-only() {
-        font-size: 13px;
+        // font-size: 13px;
         width: 100%;
       }
       &__title {
@@ -91,11 +91,18 @@
     padding-right: 0;
     position: relative;
     height: 800px;
+    @include mobile-only() {
+      position: relative;
+      top: 0;
+      height: calc((1100 / 375) * 100vw);
+      height: auto;
+    }
     .section__main {
       position: absolute;
       right: 0;
       top: -124px;
-      @include mobile-only() {
+
+      @include mobile-only {
         position: relative;
         top: 0;
       }
@@ -114,7 +121,11 @@
     }
     @include mobile-only {
       //   height: max-content;
-      margin-bottom: 100px;
+      // margin-bottom: 100px;
+      height: calc((800 / 375) * 100vw);
+      height: auto;
+      margin-top: 100px;
+      // width: 800px !important;
     }
 
     .container {
@@ -123,6 +134,10 @@
       // gap: 100px;
       align-items: center;
       gap: 0;
+      @include mobile-only {
+        // gap: calc((57 / 375) * 100vw);
+        gap: 50px;
+      }
     }
 
     .section__main {
@@ -132,6 +147,10 @@
         // width: 100%;
         width: calc((552 / 1440) * 100vw);
         aspect-ratio: 552/579;
+
+        @include mobile-only {
+          width: calc((320 / 375) * 100vw);
+        }
         // picture {
         img {
           position: absolute;
@@ -179,7 +198,9 @@
 
       @include mobile-only() {
         height: calc((625 / 375) * 100vw);
-        top: 75%;
+        height: 625px;
+        transform: none;
+        top: calc((160 / 375) * 100vw);
       }
 
       &::before {
@@ -203,6 +224,10 @@
 
   &--left {
     margin-top: 250px;
+
+    @include mobile-only {
+      margin-top: 80px;
+    }
     .section__main {
       padding-left: 0;
       // padding-right: $padding-left-right;

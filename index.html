@@ -28,6 +28,10 @@
       .attribution {
         font-size: 11px;
         text-align: center;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
       }
 
       .attribution a {
@@ -37,123 +41,170 @@
   </head>
 
   <body>
-    <header class="header">
-      <!-- <img class="decoration-bg decoration-bg--desktop" src="./images/bg-pattern-intro-desktop.svg" alt="">
-    <img class="decoration-bg decoration-bg--mobile" src="./images/bg-pattern-intro-mobile.svg" alt=""> -->
+    <nav class="navbar" id="navbar">
+      <div class="navbar__logo">
+        <img src="./images/logo.svg" alt="Blogr logo" />
+      </div>
+
+      <button class="btn--menu">
+        <img
+          class="open-icon"
+          src="./images/icon-hamburger.svg"
+          alt="open menu"
+        />
+        <img
+          class="close-icon"
+          src="./images/icon-close.svg"
+          alt="close menu"
+        />
+      </button>
+
+      <div class="navbar__nav">
+        <div class="nav nav--left">
+          <div class="navbar__nav__group">
+            <button class="navbar__nav__group__title">
+              product
+              <picture>
+                <source
+                  media="(max-width:929px)"
+                  srcset="./images/icon-arrow-dark.svg"
+                />
+                <img src="./images/icon-arrow-light.svg" alt="" />
+              </picture>
+            </button>
+            <ul class="navbar__nav__group__list">
+              <li class="navbar__nav__group__list__item">
+                <a href="">Overview</a>
+              </li>
+              <li class="navbar__nav__group__list__item">
+                <a href="">Pricing</a>
+              </li>
+              <li class="navbar__nav__group__list__item">
+                <a href="">Marketplace</a>
+              </li>
+              <li class="navbar__nav__group__list__item">
+                <a href="">Features</a>
+              </li>
+              <li class="navbar__nav__group__list__item">
+                <a href="">Integrations</a>
+              </li>
+            </ul>
+            <!-- .navbar__nav__group__list -->
+          </div>
+          <!-- .navbat__nav__group -->
+
+          <div class="navbar__nav__group">
+            <button class="navbar__nav__group__title">
+              Company
+              <picture>
+                <source
+                  media="(max-width:929px)"
+                  srcset="./images/icon-arrow-dark.svg"
+                />
+                <img src="./images/icon-arrow-light.svg" alt="" />
+              </picture>
+            </button>
+            <ul class="navbar__nav__group__list">
+              <li class="navbar__nav__group__list__item">
+                <a href="">About</a>
+              </li>
+              <li class="navbar__nav__group__list__item">
+                <a href="">Team</a>
+              </li>
+              <li class="navbar__nav__group__list__item">
+                <a href="">Blog</a>
+              </li>
+              <li class="navbar__nav__group__list__item">
+                <a href="">Careers</a>
+              </li>
+            </ul>
+            <!-- .navbar__nav__group__list -->
+          </div>
+          <!-- .navbat__nav__group -->
+
+          <div class="navbar__nav__group">
+            <button class="navbar__nav__group__title">
+              Connect
+              <picture>
+                <source
+                  media="(max-width:929px)"
+                  srcset="./images/icon-arrow-dark.svg"
+                />
+                <img src="./images/icon-arrow-light.svg" alt="" />
+              </picture>
+            </button>
+            <ul class="navbar__nav__group__list">
+              <li class="navbar__nav__group__list__item">
+                <a href="">Contact</a>
+              </li>
+              <li class="navbar__nav__group__list__item">
+                <a href="">Newsletter</a>
+              </li>
+              <li class="navbar__nav__group__list__item">
+                <a href="">LinkedIn</a>
+              </li>
+            </ul>
+            <!-- .navbar__nav__group__list -->
+          </div>
+          <!-- .navbat__nav__group -->
+        </div>
+        <!-- .nav .nav--left -->
+
+        <div class="nav nav--right">
+          <li class="navbar__nav__item">
+            <a class="btn btn--transparent" href="#">Login</a>
+          </li>
+          <li class="navbar__nav__item">
+            <a class="btn btn--white btn--mobile-vary" href="#">Sign Up</a>
+          </li>
+        </div>
+        <!-- .nav .nav--right -->
+      </div>
+      <!-- .navbar__nav -->
+    </nav>
+    <!-- #navbar -->
+
+    <header class="header" id="header">
       <picture class="decoration-bg">
         <img src="./images/bg-pattern-intro-mobile.svg" alt="" />
         <source
-          media="(max-width:375px)"
+          media="(max-width:929px)"
           srcset="./images/bg-pattern-intro-desktop.svg"
         />
       </picture>
 
-      <nav class="navbar">
-        <div class="navbar__logo">
-          <img src="./images/logo.svg" alt="Blogr logo" />
-        </div>
-        <!-- <div class="menu-btn"></div> -->
-        <button class="btn--menu">
-          <img src="./images/icon-hamburger.svg" alt="open menu" />
-        </button>
-        <div class="navbar__nav">
-          <div class="nav nav--left">
-            <div class="navbar__nav__group">
-              <button class="navbar__nav__group__title">product</button>
-              <ul class="navbar__nav__group__list">
-                <li class="navbar__nav__group__list__item">
-                  <a href="">Overview</a>
-                </li>
-                <li class="navbar__nav__group__list__item">
-                  <a href="">Pricing</a>
-                </li>
-                <li class="navbar__nav__group__list__item">
-                  <a href="">Marketplace</a>
-                </li>
-                <li class="navbar__nav__group__list__item">
-                  <a href="">Features</a>
-                </li>
-                <li class="navbar__nav__group__list__item">
-                  <a href="">Integrations</a>
-                </li>
-              </ul>
-            </div>
-
-            <div class="navbar__nav__group">
-              <button class="navbar__nav__group__title">Company</button>
-              <ul class="navbar__nav__group__list">
-                <li class="navbar__nav__group__list__item">
-                  <a href="">About</a>
-                </li>
-                <li class="navbar__nav__group__list__item">
-                  <a href="">Team</a>
-                </li>
-                <li class="navbar__nav__group__list__item">
-                  <a href="">Blog</a>
-                </li>
-                <li class="navbar__nav__group__list__item">
-                  <a href="">Careers</a>
-                </li>
-              </ul>
-            </div>
-
-            <div class="navbar__nav__group">
-              <button class="navbar__nav__group__title">Connect</button>
-              <ul class="navbar__nav__group__list">
-                <li class="navbar__nav__group__list__item">
-                  <a href="">Contact</a>
-                </li>
-                <li class="navbar__nav__group__list__item">
-                  <a href="">Newsletter</a>
-                </li>
-                <li class="navbar__nav__group__list__item">
-                  <a href="">LinkedIn</a>
-                </li>
-              </ul>
-            </div>
-            <!-- <button class="navbar__nav__item"></button>
-  
-          <button class="navbar__nav__item"></button> -->
-          </div>
-          <div class="nav nav--right">
-            <li class="navbar__nav__item">
-              <a class="btn btn--transparent" href="#">Login</a>
-            </li>
-            <li class="navbar__nav__item">
-              <a class="btn btn--white btn--mobile-vary" href="#">Sign Up</a>
-            </li>
-          </div>
-        </div>
-      </nav>
       <div class="header__header">
         <h1 class="header__header__title">A modern publishing platform</h1>
         <p class="header__header__text">
           Grow your audience and build your online brand
         </p>
       </div>
+      <!-- .header__header -->
+
       <div class="header__footer">
         <button class="btn btn--white">Start for Free</button>
         <button class="btn">Learn More</button>
       </div>
+      <!-- header__footer -->
     </header>
+    <!-- #header -->
 
     <main class="main">
       <section class="section section--right">
         <header class="section__header">
           <h2 class="section__header__title">Designed for the future</h2>
         </header>
+
         <div class="section__main">
           <div class="container container--reverse">
-            <!-- <div class="section__main__image"> -->
-
             <picture class="section__main__image">
               <source
-                media="(max-width:375px)"
+                media="(max-width:929px)"
                 srcset="./images/illustration-editor-mobile.svg"
               />
               <img src="./images/illustration-editor-desktop.svg" alt="" />
             </picture>
-            <!-- </div> -->
+
             <div class="section__main__text">
               <div class="text-container">
                 <h3 class="section__main__text__title">
@@ -168,6 +219,7 @@
                   or change the looks of a blog.
                 </p>
               </div>
+              <!-- .text-container -->
 
               <div class="text-container">
                 <h3 class="section__main__text__title">
@@ -180,25 +232,27 @@
                   functionality, you’re in full control.
                 </p>
               </div>
+              <!-- .text-container -->
             </div>
+            <!-- .section__maint__text -->
           </div>
+          <!-- .container -->
         </div>
-        <footer class="section__footer"></footer>
+        <!-- .section__main -->
       </section>
+      <!-- .section--right -->
 
       <section class="section section--dark">
-        <div class="background">
-          <!-- <div class="background__image">
-          <img src="./images/bg-pattern-circles.svg" alt="">
-        </div> -->
-        </div>
+        <div class="background"></div>
+
         <header class="section__header"></header>
+
         <div class="section__main">
           <div class="container">
             <picture class="section__main__image">
-              <!-- <source media="(max-width:375px)" srcset="./images/illustration-phones-mobile.svg"> -->
               <img src="./images/illustration-phones.svg" alt="" />
             </picture>
+
             <div class="section__main__text">
               <h3 class="section__main__text__title">
                 State of the Art Infrastructure
@@ -210,23 +264,26 @@
                 keeping your site competitive.
               </p>
             </div>
+            <!-- .section__maint__text -->
           </div>
+          <!-- .container -->
         </div>
-        <footer class="section__footer"></footer>
+        <!-- .section__main -->
       </section>
 
       <section class="section section--left">
         <header class="section__header"></header>
+
         <div class="section__main">
           <div class="container">
             <picture class="section__main__image">
               <source
-                media="(max-width:375px)"
+                media="(max-width:929px)"
                 srcset="./images/illustration-laptop-mobile.svg"
               />
-
               <img src="./images/illustration-laptop-desktop.svg" alt="" />
             </picture>
+
             <div class="section__main__text">
               <div class="text-container">
                 <h3 class="section__main__text__title">Free, open, simple</h3>
@@ -239,6 +296,7 @@
                   learn.
                 </p>
               </div>
+              <!-- .text-container -->
 
               <div class="text-container">
                 <h3 class="section__main__text__title">Powerful tooling</h3>
@@ -248,18 +306,22 @@
                   capable of producing even the most complicated sites.
                 </p>
               </div>
+              <!-- .text-container -->
             </div>
+            <!-- .section__main__text -->
           </div>
+          <!-- .container -->
         </div>
-        <footer class="section__footer"></footer>
+        <!-- .section__main -->
       </section>
     </main>
 
-    <footer class="footer">
-      <nav class="footer__nav">
+    <footer class="footer" id="footer">
+      <nav class="footer__nav" id="footer-nav">
         <div class="footer__logo">
           <img src="./images/logo.svg" alt="" />
         </div>
+
         <div class="footer__nav__group">
           <h3 class="footer__nav__group__title">Product</h3>
           <ul class="footer__nav__group__list">
@@ -280,6 +342,8 @@
             </li>
           </ul>
         </div>
+        <!-- .footer__nav__group -->
+
         <div class="footer__nav__group">
           <h3 class="footer__nav__group__title">Company</h3>
           <ul class="footer__nav__group__list">
@@ -291,6 +355,8 @@
             </li>
           </ul>
         </div>
+        <!-- .footer__nav__group -->
+
         <div class="footer__nav__group">
           <h3 class="footer__nav__group__title">Connect</h3>
           <ul class="footer__nav__group__list">
@@ -305,15 +371,18 @@
             </li>
           </ul>
         </div>
+        <!-- .footer__nav__group -->
       </nav>
-    </footer>
+      <!-- footer-nav -->
 
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">William Farre</a>.
+      </div>
+    </footer>
+    <!-- #footer -->
 
     <script src="index.js"></script>
   </body>
