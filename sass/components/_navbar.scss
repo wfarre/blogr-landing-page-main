@@ -25,7 +25,7 @@
     // min-width: 101px;
     @include mobile-only {
       width: calc((101 / 375) * 100vw);
-      min-width: none;
+      // min-width: none;
     }
     aspect-ratio: 101/40;
 

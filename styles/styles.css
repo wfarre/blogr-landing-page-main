@@ -102,7 +102,6 @@
 @media all and (max-width: 929px) {
   .navbar__logo {
     width: 26.9333333333vw;
-    min-width: none;
   }
 }
 .navbar__logo img {
